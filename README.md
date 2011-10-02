@@ -11,14 +11,6 @@ generated source in the normal way.
 In order to use this plugin, just include it as a dependency in your
 `project/plugins/build.sbt` file and precompilation will "just work".
 
-SBT 0.10.x:
-
-    libDependencies ++= Seq("com.zentrope" %% "xsbt-scalate-precompiler-plugin" % "1.5")
-
-SBT 0.11.x:
-
-    addSbtPlugin("com.zentrope" %% "xsbt-scalate-precompiler-plugin" % "1.5")
-
 ## Design Choices
 
 This plugin is not supported by the Scalate Project and thus only
