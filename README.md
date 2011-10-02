@@ -1,4 +1,6 @@
-# XSBT Scalate Precompile Plugin 1.4
+# XSBT Scalate Precompile Plugin 1.5
+
+(Based on the Scalate 1.5.2 Release and Scala 2.9.1)
 
 This XSBT >= 0.10.X plugin precompiles your Scalate templates for you
 as part of the normal compilation process. The plugin accomplishes
@@ -8,6 +10,14 @@ generated source in the normal way.
 
 In order to use this plugin, just include it as a dependency in your
 `project/plugins/build.sbt` file and precompilation will "just work".
+
+SBT 0.10.x:
+
+    libDependencies ++= Seq("com.zentrope" %% "xsbt-scalate-precompiler-plugin" % "1.5")
+
+SBT 0.11.x:
+
+    addSbtPlugin("com.zentrope" %% "xsbt-scalate-precompiler-plugin" % "1.5")
 
 ## Design Choices
 
@@ -20,9 +30,10 @@ plugin is perfect for me.
 
 These are the following design choices:
 
- * Simply installing this plugin (see below) makes it "just work".
+ * Simply installing this plugin (see below) makes it "just work". (No
+   need to explicitly include the functions in your build.sbt file.)
 
- * Precompilation is not optional (yet). The workflow should be to
+ * Precompilation is not optional. The workflow should be to
    compile, then start your app, then see if it worked. My assumption
    is that you're running a stand-alone web app.
 
@@ -58,9 +69,16 @@ Create a file called `/project/plugins/build.sbt' and add the following lines:
       "zentrope" at "http://zentrope.com/maven"
     )
 
+SBT 0.10.x:
+
     libraryDependencies ++= Seq (
         "com.zentrope" %% "xsbt-scalate-precompile-plugin" % "1.4"
     )
+
+SBT 0.11.x:
+
+    addSbtPlugin("com.zentrope" %% "xsbt-scalate-precompiler-plugin" % "1.5")
+
 
 ## Tasks
 
@@ -87,7 +105,3 @@ You can also modify Scalate's default logging via a `logback.xml`
 config file in the `src/main/resources` directory via the
 logging-config setting. By default Scalate prints out a lot of debug
 information which can become distracting after a while.
-
-## Credits
-
-TODO

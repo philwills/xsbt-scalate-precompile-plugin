@@ -6,7 +6,7 @@ name := "xsbt-scalate-precompile-plugin"
 
 organization := "com.zentrope"
 
-version := "1.4"
+version := "1.5"
 
 cleanFiles <<= (cleanFiles, baseDirectory) {
   (files, basedir) =>
@@ -14,7 +14,7 @@ cleanFiles <<= (cleanFiles, baseDirectory) {
 }
 
 libraryDependencies ++= Seq(
-  "org.fusesource.scalate" % "scalate-core" % "1.4.1" % "compile",
+  "org.fusesource.scalate" % "scalate-core" % "1.5.2" % "compile",
   "ch.qos.logback" %  "logback-classic" % "0.9.28" % "compile"
 )
 
