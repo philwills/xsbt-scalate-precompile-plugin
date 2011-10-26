@@ -69,7 +69,7 @@ SBT 0.10.x:
 
 SBT 0.11.x:
 
-    addSbtPlugin("com.zentrope" %% "xsbt-scalate-precompiler-plugin" % "1.5")
+    addSbtPlugin("com.zentrope" %% "xsbt-scalate-precompile-plugin" % "1.5")
 
 
 ## Tasks
